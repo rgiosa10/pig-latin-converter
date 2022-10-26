@@ -30,3 +30,17 @@ function consonantChange(consonantWord) {
 }
 
 
+// UI Logic
+
+window.addEventListener("load", function() {
+  let form = document.getElementById("text-input");
+  let result = document.getElementById("results");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const text = form.querySelector("input#text-input1").value;
+    
+    textArray = convertToArrayAndCheck(text).toString().replaceAll(",", " ");
+    result.append(textArray);
+  });
+});
