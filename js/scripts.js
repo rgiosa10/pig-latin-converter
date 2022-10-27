@@ -11,22 +11,26 @@ function convertToArrayAndCheck(text) {
       console.log(vowelWord);
     } else {
       consonantWord = textArray[i];
-      textArray[i] = consonantChange(consonantWord)
+      textArray[i] = consonantChange(consonantWord);
     }
   }
+  return textArray;
 }
 
 function consonantChange(consonantWord) {
   // let letterArray = consonantWord.split("");
   if (consonantWord.charAt(0) === "q" && consonantWord.charAt(1) === "u") {
     let preFix =  consonantWord.slice(0, 2);
-    console.log(preFix);
+    let remainder = consonantWord.slice(2,consonantWord.length)
+    pigLatinWord = remainder + preFix + "ay";
   } else if (consonantWord.charAt(1) === "q" && consonantWord.charAt(2) === "u") {
-    let preFix =  consonantWord.slice(0, 2);
+    let preFix =  consonantWord.slice(0, 3);
+    let remainder = consonantWord.slice(3, consonantWord.length)
+    pigLatinWord = remainder + preFix + "ay";
+  } else if (consonantWord.charAt(1) === "q" && consonantWord.charAt(2) === "u") {
     pigLatinWord = consonantWord + preFix + "ay";
-  } 
-    textArray[i]= consonantWord + preFix + "ay";
-    console.log(pigLatinWord);
+  }
+  return pigLatinWord;
 }
 
 
